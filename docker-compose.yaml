@@ -1,0 +1,18 @@
+version: "3"
+services:
+  ijah:
+    container_name: ijah_inventory_api_app
+    build: .
+    ports:
+    - "9999:9999"
+    depends_on:
+    - postgres
+  postgres:
+    container_name: ijah_postgres
+    image: postgres:10.5
+    restart: unless-stopped
+    volumes:
+    - ./docker/db:/var/lib/postgresql/data
+    - ./cmd:/docker-entrypoint-initdb.d
+    ports:
+    - "5432:5432"

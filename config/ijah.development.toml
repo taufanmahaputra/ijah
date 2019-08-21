@@ -1,0 +1,12 @@
+[app]
+appname = "Ijah"
+port = ":9999"
+
+
+[database]
+host = "postgres"
+port = "5432"
+database = "forex"
+user = "postgres"
+password = ""
+ssl = "disable"
